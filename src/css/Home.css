@@ -1,8 +1,2 @@
 @import "tailwindcss";
-
-/* .center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
+@custom-variant dark (&:where(.dark, .dark *));
