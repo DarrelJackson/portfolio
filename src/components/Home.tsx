@@ -2,11 +2,13 @@ import { useEffect, useState} from 'react'
 import { animate, scrambleText } from 'animejs';
 import { SideNav } from "./SideNav.tsx";
 import { ExperienceCard } from "./ExperienceCard.tsx";
+import { ProjectCard } from "./ProjectCard.tsx";
 import signature from '../assets/DarrelsSig.svg';
 import signatureLight from '../assets/DarrelsSigLight.svg';
 import IntelligentMachines from '../assets/IML.jpg';
 import TheServiceCenter from '../assets/TSC.jpg';
 import Loading from '../assets/Loading.gif';
+import ComingSoon from '../assets/ComingSoon.gif';
 import Darrel from '../assets/Darrel.jpg';
 import Resume from '../assets/Darrel_Jackson_Full_Stack_Resume.pdf'
 import { useDarkMode } from './Darkmode.tsx';
@@ -102,16 +104,12 @@ function Home() {
                 { id: 'contact', label: 'Contact' },
               ]}
             />
-            <nav className="fixed top-0 left-0 right-0 flex w-full items-center justify-between bg-white dark:bg-gray-800 px-6 py-4">
+            <nav className="top-0 left-0 right-0 flex w-full items-center justify-between bg-white dark:bg-gray-800 px-6 py-4">
               <div className="text-xl font-bold text-gray-800 dark:text-white">
                 <img src={signature} alt="D" className="block h-12 w-auto dark:hidden" />
                 <img src={signatureLight} alt="D" className="hidden h-12 w-auto dark:block" />
               </div>
               <div className="flex space-x-6 text-gray-800 dark:text-white font-normal">
-                {/* <a href="#" className="hover:text-blue-600">About</a>
-                <a href="#" className="hover:text-blue-600">Experience</a>
-                <a href="#" className="hover:text-blue-600">Projects</a>
-                <a href="#" className="hover:text-blue-600">Contact</a> */}
                 <button onClick={toggleDark} className="rounded px-3 py-1 text-black dark:text-white">
                   {isDark ? <i className="fa-regular fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
                 </button>
@@ -148,13 +146,11 @@ function Home() {
                       logo={IntelligentMachines}
                       role="Software Engineer"
                       company="Company Name"
-                      dateRange="Jan 2022 – Present"
+                      dateRange="Jun 2021 – Aug 2021"
                       description={[
-                        "Built and maintained production web applications.",
-                        "Modernized legacy applications and improved performance.",
-                        "Integrated third-party APIs and internal services.",
-                        "Provided production support and troubleshooting.",
-                        "Collaborated with stakeholders to deliver new features."
+                        "Made 2 web pages which was location and tracking based",
+                        "Made 5 API schemas which included tracking, location, authorization, status of a call agent, and a check in for call agents",
+                        "Worked on 3 databases in T-SQL which was location, tracking, and authorization",
                       ]}
                     />
                     <ExperienceCard
@@ -184,12 +180,95 @@ function Home() {
               </section>
               {/* Projects Section */}
             <section id="projects" className="scroll-mt-24 py-12">
+                <div className="w-full max-w-7xl ml-4 sm:ml-9 md:ml-18 mr-auto rounded-2xl bg-white dark:bg-gray-800 p-4 sm:p-6 md:p-8">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                    Projects
+                  </h2>
 
+                  <div className="flex flex-wrap items-start gap-6">
+                    <ProjectCard
+                      logo={TheServiceCenter}
+                      name="The Service Center Projects"
+                      company="The Service Center Projects"
+                      description="Place Holder"
+                      link="https://www.youtube.com/watch?v=7bbxOrYpXYI&list=PLbSDMSTLmoD1Pnbgb3B6EUkOEIzFPSOsS"
+                    />
+                    <ProjectCard
+                      logo={Darrel}
+                      name="Portfolio"
+                      company="Portfolio"
+                      description="Already here! :)"
+                      link="https://onepiecedle.net/classic"
+                    />
+                    <ProjectCard
+                      logo={ComingSoon}
+                      name="TBD"
+                      company="TBD"
+                      description=""
+                      link="https://onepiecedle.net/classic"
+                    />
+                  </div>
+                </div>
             </section>
             {/* Contact Section */}
             <section id="contact" className="scroll-mt-24 py-12">
+                <div className="w-full max-w-7xl ml-4 sm:ml-9 md:ml-18 mr-auto rounded-2xl bg-white dark:bg-gray-800 shadow-lg p-4 sm:p-6 md:p-8">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                    Contact
+                  </h2>
 
-            </section>
+                  <div className="flex flex-col text-lg gap-3 text-gray-600 dark:text-gray-300">
+                    <a
+                      href="darreljackson.dj@gmail.com"
+                      aria-label="Email"
+                      className="hover:text-blue-600 transition"
+                    >
+                      <span>Email</span>
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/in/darrel-jackson-706302202/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="hover:text-blue-600 transition"
+                    >
+                      <span>Linkedin</span>
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a
+                      href={Resume}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Resume"
+                      className="hover:text-blue-600 transition"
+                    >
+                      <span>Full Resume</span>
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </div>
+                </div>
+              </section>
+            <footer className="w-full py-8 px-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+                  <a href="mailto:darreljackson.dj@gmail.com" aria-label="Email" className="hover:text-blue-600 transition">
+                    <i className="fa-regular fa-envelope fa-lg"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/darrel-jackson-706302202/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-600 transition">
+                    <i className="fa-brands fa-linkedin fa-lg"></i>
+                  </a>
+                  <a href="https://github.com/DarrelJackson" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-blue-600 transition">
+                    <i className="fa-brands fa-github fa-lg"></i>
+                  </a>
+                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  © {new Date().getFullYear()} Darrel Jackson. All rights reserved.
+                </p>
+              </div>
+            </footer>
           </div>
         )}
 
