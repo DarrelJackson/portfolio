@@ -11,6 +11,8 @@ import Loading from '../assets/Loading.gif';
 import ComingSoon from '../assets/ComingSoon.gif';
 import Darrel from '../assets/Darrel.jpg';
 import Resume from '../assets/Darrel_Jackson_Full_Stack_Resume.pdf'
+import Projects from '../assets/List of projects that I built at the TSC.pdf'
+import logo from '../assets/android-chrome-512x512.png'
 import { useDarkMode } from './Darkmode.tsx';
 import '../css/Home.css'
 
@@ -140,7 +142,6 @@ function Home() {
                   <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-6">
                     Experience
                   </h2>
-
                   <div className="flex flex-wrap items-start gap-6">
                     <ExperienceCard
                       logo={IntelligentMachines}
@@ -184,17 +185,16 @@ function Home() {
                   <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-6">
                     Projects
                   </h2>
-
                   <div className="flex flex-wrap items-start gap-6">
                     <ProjectCard
                       logo={TheServiceCenter}
                       name="The Service Center Projects"
                       company="The Service Center Projects"
-                      description="Place Holder"
-                      link="https://www.youtube.com/watch?v=7bbxOrYpXYI&list=PLbSDMSTLmoD1Pnbgb3B6EUkOEIzFPSOsS"
+                      description="List of projects"
+                      link={Projects}
                     />
                     <ProjectCard
-                      logo={Darrel}
+                      logo={logo}
                       name="Portfolio"
                       company="Portfolio"
                       description="Already here! :)"
