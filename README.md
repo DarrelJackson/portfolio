@@ -1,78 +1,92 @@
-# React + TypeScript + Vite
+# Darrel Jackson — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio site built with React, TypeScript, and Tailwind CSS. Features an animated landing screen, light/dark mode, a scroll-tracking side navigation, and expandable cards for experience and projects.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+(https://www.darreljackson.com/)
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Animated intro** — welcome message scrambles in using [anime.js](https://animejs.com/), followed by a fade transition into the main site.
+- **Light / dark mode** — toggle in the nav, respects system preference on first visit, and persists the user's choice across sessions via `localStorage`.
+- **Scroll-tracking side nav** — a dot-based side navigation highlights the section currently in view and lets you jump directly to any section.
+- **Expandable cards** — experience and project entries collapse by default and expand individually to reveal full details.
+- **Fully responsive** — built mobile-first with Tailwind's responsive utilities throughout.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Tech Stack
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) — build tool and dev server
+- [Tailwind CSS](https://tailwindcss.com/) — utility-first styling
+- [anime.js](https://animejs.com/) — animations (text scramble, fade transitions)
+- [Font Awesome](https://fontawesome.com/) — icons
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
 
+```bash
+git clone https://github.com/DarrelJackson/<repo-name>.git
+cd <repo-name>
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Runs the app locally with hot reload, typically at `http://localhost:5173`.
+
+### Build
+
+```bash
+npm run build
+```
+
+Builds a production-ready bundle to `dist/`.
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+## Project Structure
 
 ```
+src/
+├── assets/            # Images, logos, resume PDF, etc.
+├── components/
+│   ├── Home.tsx        # Main page — layout, sections, animation logic
+│   ├── Darkmode.tsx     # useDarkMode hook — theme state + persistence
+│   ├── SideNav.tsx      # Scroll-tracking side navigation
+│   ├── ExperienceCard.tsx
+│   └── ProjectCard.tsx
+└── css/
+    └── Home.css
+```
+
+## Sections
+
+- **About** — intro, headshot, and links to LinkedIn, GitHub, and resume.
+- **Experience** — expandable cards listing roles, companies, and dates.
+- **Projects** — expandable cards showcasing project work with links.
+- **Contact** — email, LinkedIn, and resume download.
+
+## Contact
+
+- **Email:** darreljackson.dj@gmail.com
+- **LinkedIn:** [linkedin.com/in/darrel-jackson-706302202](https://www.linkedin.com/in/darrel-jackson-706302202/)
+- **GitHub:** [github.com/DarrelJackson](https://github.com/DarrelJackson)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

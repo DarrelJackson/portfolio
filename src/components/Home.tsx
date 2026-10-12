@@ -198,14 +198,14 @@ function Home() {
                       name="Portfolio"
                       company="Portfolio"
                       description="Already here! :)"
-                      link="https://onepiecedle.net/classic"
+                      link="https://www.darreljackson.com/"
                     />
                     <ProjectCard
                       logo={ComingSoon}
                       name="TBD"
                       company="TBD"
                       description=""
-                      link="https://onepiecedle.net/classic"
+                      link=""
                     />
                   </div>
                 </div>
