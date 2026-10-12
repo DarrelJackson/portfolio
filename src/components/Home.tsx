@@ -219,7 +219,7 @@ function Home() {
 
                   <div className="flex flex-col text-lg gap-3 text-gray-600 dark:text-gray-300">
                     <a
-                      href="darreljackson.dj@gmail.com"
+                      href="mailto:darreljackson.dj@gmail.com"
                       aria-label="Email"
                       className="hover:text-blue-600 transition"
                     >
