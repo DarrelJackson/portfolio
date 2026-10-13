@@ -134,7 +134,7 @@ function Home() {
                   <div className="max-w-prose space-y-4 text-base sm:text-lg font-normal leading-relaxed text-gray-700 dark:text-gray-200">
                     <p>Hi, my name is Darrel Jackson. I'm a full-stack software engineer with four years of experience building web applications and internal tools. I like building things that make people's work easier, whether that's helping customer service get faster access to the reports they need or building a tool so I don't have to repeat the same mundane task myself every time.</p>
                     <p>I've worked across the full stack, from the interfaces people interact with every day to the backend systems and databases behind them. I care about performance and usability just as much as I care about getting a feature working.</p>
-                    <p>I am always striving to learn and become better at what I am passionate about. From programming to gaming in my free time, I always give my best effort.</p>
+                    <p>I am always striving to learn and improve in the things I'm passionate about. Whether it's programming or gaming in my free time, I always give my best effort.</p>
                   </div>
                 </div>
               </div>
@@ -152,9 +152,9 @@ function Home() {
                         company="Intelligent Machines Limited"
                         dateRange="Jun 2021 – Aug 2021"
                         description={[
-                          "Made 2 web pages which was location and tracking based",
-                          "Made 5 API schemas which included tracking, location, authorization, status of a call agent, and a check in for call agents",
-                          "Worked on 3 databases in T-SQL which was location, tracking, and authorization",
+                          "Developed 2 web pages focused on location and tracking.",
+                          "Created 5 API schemas covering tracking, location, authorization, call agent status, and call agent check-ins.",
+                          "Worked with 3 databases using T-SQL for location, tracking, and authorization.",
                         ]}
                       />
                       <ExperienceCard
