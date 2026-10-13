@@ -1,28 +1,41 @@
-{/* Shows what section you are on the page */}
 import { useEffect, useState } from 'react';
 
-export function useActiveSection(sectionIds: string[]): string {
-  const [activeId, setActiveId] = useState<string>(sectionIds[0]);
+export function useActiveSection(ids: string[]): string {
+  const [activeId, setActiveId] = useState<string>(ids[0] ?? '');
+  const key = ids.join(',');
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '-50% 0px -50% 0px' }
-    );
+    const sectionIds = key.split(',');
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    const update = () => {
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
 
-    return () => observer.disconnect();
-  }, [sectionIds]);
+      if (atBottom) {
+        setActiveId(sectionIds[sectionIds.length - 1]);
+        return;
+      }
+
+      const line = window.innerHeight * 0.4;
+      let current = sectionIds[0];
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) {
+          current = id;
+        }
+      }
+      setActiveId(current);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [key]);
 
   return activeId;
 }
