@@ -132,9 +132,9 @@ function Home() {
                     </div>
                   </div>
                   <div className="max-w-prose space-y-4 text-base sm:text-lg font-normal leading-relaxed text-gray-700 dark:text-gray-200">
-                    <p>Hi, my name is Darrel Jackson. I'm a full-stack software engineer with four years of experience building web applications and internal tools. I like building things that make people's work easier, whether that's helping customer service get faster access to the reports they need or building a tool so I don't have to repeat the same mundane task myself every time.</p>
-                    <p>I've worked across the full stack, from the interfaces people interact with every day to the backend systems and databases behind them. I care about performance and usability just as much as I care about getting a feature working.</p>
-                    <p>I am always striving to learn and improve in the things I'm passionate about. Whether it's programming or gaming in my free time, I always give my best effort.</p>
+                    <p>Hi, my name is Darrel Jackson, and I’m a full-stack software engineer with four years of experience developing web applications and internal tools. I enjoy building solutions that simplify workflows, improve efficiency, and make people’s jobs easier. Whether it’s helping customer service teams access reports more quickly or automating repetitive tasks, I’m passionate about using technology to solve real-world problems.</p>
+                    <p>My experience spans the full stack, from designing intuitive, user-friendly interfaces to developing the backend systems and databases that power them. I value performance, usability, and maintainability, and I strive to create applications that are both reliable and efficient.</p>
+                    <p>I’m always looking for opportunities to learn, grow, and improve my skills in the areas I’m passionate about. Whether I’m developing software or gaming in my free time, I approach everything I do with curiosity, dedication, and a commitment to giving my best.</p>
                   </div>
                 </div>
               </div>
